@@ -1,0 +1,99 @@
+
+<section class="contact spad">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+              <div class="contact__widget">
+                  <span class="icon_phone"></span>
+                  <h4>Số điện thoại</h4>
+                  <p>+84 353-866-145</p>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+              <div class="contact__widget">
+                  <span class="icon_pin_alt"></span>
+                  <h4>Địa chỉ</h4>
+                  <p>Liêu xá - Yên mĩ - Hưng yên</p>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+              <div class="contact__widget">
+                  <span class="icon_clock_alt"></span>
+                  <h4>Mờ cửa</h4>
+                  <p>10:00 sáng đến 23:00 tối</p>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+              <div class="contact__widget">
+                  <span class="icon_mail_alt"></span>
+                  <h4>Email</h4>
+                  <p>thangdang20122001@gmail.com</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Contact Section End -->
+
+<!-- Map Begin -->
+<div class="map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14910.800592820096!2d106.01943928050902!3d20.884132894963905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135bb39c519f093%3A0xb2385445df26a4ab!2zdHQuIFnDqm4gTeG7uSwgWcOqbiBN4bu5LCBIxrBuZyBZw6puLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1686678497555!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="map-inside">
+      <i class="icon_pin"></i>
+      <div class="inside-widget">
+          <h4>Hưng Yên</h4>
+          <ul>
+              <li>Phone: +84 353 866 145</li>
+              <li>Địa chỉ: Lieu Xa, Yen Mi. Hung Yen, VN</li>
+          </ul>
+      </div>
+  </div>
+</div>
+<!-- Map End -->
+
+<!-- Contact Form Begin -->
+<div class="checkout__form">
+  <h4>
+    Lien he</h4>
+    <form [formGroup]="frmMail" (ngSubmit)="onSubmit(frmMail.value)">
+      <div class="row">
+          <div class="col-lg-8 col-md-6">
+              <div class="row">
+                  <div class="col-lg-6">
+
+                  </div>
+
+              </div>
+
+
+
+
+
+              <div class="row">
+                  <div class="col-lg-6">
+                      <div class="checkout__input">
+                          <p>Tieu de<span>*</span></p>
+
+                      </div>
+                      <input formControlName="txt_subject" type="text" ngModel>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="checkout__input">
+                          <p>Email<span>*</span></p>
+                          <span *ngIf="email.invalid && (email.dirty || email.touched)">
+                            <span *ngIf="email.errors?.['email']">Không đúng định dạng của email</span>
+                        </span>
+                      </div>
+                      <input formControlName="txt_to" type="text" ngModel>
+                  </div>
+              </div>
+              <label for="txt_ghichu">Ghi chú:</label><br>
+              <textarea formControlName="txt_body" id="txt_body" cols="135" rows="1" ngModel></textarea>
+
+          </div>
+          <div class="col-lg-4 col-md-6">
+                  <button [disabled]="frmMail.invalid" [ngStyle]="{'background-color':frmMail.invalid?'#5c7791':'rgb(59, 75, 42);'}" type="submit">Gui tin nhan</button>
+
+          </div>
+      </div>
+</form>

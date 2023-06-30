@@ -1,0 +1,132 @@
+<header class="topbar" data-navbarbg="skin6">
+  <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+      <div class="navbar-header" data-logobg="skin6">
+          <!-- ============================================================== -->
+          <!-- Logo -->
+          <!-- ============================================================== -->
+          <a class="navbar-brand" href="">
+              <!-- Logo icon -->
+              <b class="logo-icon">
+                  <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                  <!-- Dark Logo icon -->
+                  <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+
+              </b>
+              <!--End Logo icon -->
+              <!-- Logo text -->
+              <span class="logo-text">
+                  <!-- dark Logo text -->
+                  <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;margin-left: 40px;">Decora</p>
+
+              </span>
+          </a>
+          <!-- ============================================================== -->
+          <!-- End Logo -->
+          <!-- ============================================================== -->
+          <!-- ============================================================== -->
+          <!-- toggle and nav items -->
+          <!-- ============================================================== -->
+          <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+              href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Logo -->
+      <!-- ============================================================== -->
+      <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+
+          <!-- ============================================================== -->
+          <!-- toggle and nav items -->
+          <!-- ============================================================== -->
+          <ul class="navbar-nav me-auto mt-md-0 ">
+              <!-- ============================================================== -->
+              <!-- Search -->
+              <!-- ============================================================== -->
+
+
+          </ul>
+
+          <!-- ============================================================== -->
+          <!-- Right side toggle and nav items -->
+          <!-- ============================================================== -->
+          <ul class="navbar-nav">
+              <!-- ============================================================== -->
+              <!-- User profile and search -->
+              <!-- ============================================================== -->
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle waves-effect waves-dark"  [routerLink]="['/user/manage-user']" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic me-2">{{user.hoTen}}
+                  </a>
+                  <!-- <ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul> -->
+              </li>
+          </ul>
+      </div>
+  </nav>
+</header>
+<!-- ============================================================== -->
+<!-- End Topbar header -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Left Sidebar - style you can find in sidebar.scss  -->
+<!-- ============================================================== -->
+<aside class="left-sidebar" data-sidebarbg="skin6">
+  <!-- Sidebar scroll-->
+  <div class="scroll-sidebar">
+      <!-- Sidebar navigation-->
+      <nav class="sidebar-nav">
+          <ul id="sidebarnav" >
+              <!-- User Profile-->
+
+
+              <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                 aria-expanded="false"><i class="me-3 far fa-table fa-fw"
+                    aria-hidden="true"></i><span class="hide-menu"><a href="#">Danh mục</a></span></a>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                      [routerLink]="['product/doanhthu']"aria-expanded="false"  *ngIf="user.role == 'Admin'">
+                            <i class="me-3 fa fa-table" aria-hidden="true"></i><span
+                                class="hide-menu">Doanh thu</span></a></li>
+
+              <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                [routerLink]="['product/danhsachsp']"aria-expanded="false"  *ngIf="user.role == 'Admin'"><i class="me-3 fa fa-table"
+                          aria-hidden="true"></i><span class="hide-menu">Danh sách sản phẩm</span></a></li>
+                          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            [routerLink]="['product/loaisp']"aria-expanded="false" *ngIf="user.role == 'Admin'" >
+                                  <i class="me-3 fa fa-table" aria-hidden="true"></i><span
+                                      class="hide-menu">Loại sản phẩm</span></a></li>
+                                      <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                        [routerLink]="['product/quatang']"aria-expanded="false" *ngIf="user.role == 'Admin'" >
+                                              <i class="me-3 fa fa-table" aria-hidden="true"></i><span
+                                                  class="hide-menu">Quà tặng</span></a></li>
+                          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            [routerLink]="['product/khachhang']"aria-expanded="false"  *ngIf="user.role == 'Admin'"><i class="me-3 fa fa-table"
+                                aria-hidden="true"></i><span class="hide-menu" >Khách hàng</span></a>
+
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                  [routerLink]="['product/nhanvien']"aria-expanded="false"  *ngIf="user.role == 'Admin'"><i class="me-3 fa fa-table"
+                                      aria-hidden="true"></i><span class="hide-menu" >Nhân viên </span></a>
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                  [routerLink]="['product/hoadon']"aria-expanded="false"  ><i class="me-3 fa fa-table"
+                                      aria-hidden="true"></i><span class="hide-menu"> Đơn hàng</span></a>
+                                <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                  [routerLink]="['product/chitiethoadon']"aria-expanded="false"  *ngIf="user.role == 'Admin'"><i class="me-3 fa fa-table"
+                                      aria-hidden="true"></i><span class="hide-menu"> Chi tiết đơn hàng</span></a> -->
+                                            <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                              [routerLink]="['product/sell']"aria-expanded="false"  *ngIf="user.role == 'Admin'"><i class="me-3 fa fa-table"
+                                                  aria-hidden="true"></i><span class="hide-menu"> Thanh toan hóa đơn</span></a> -->
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                  [routerLink]="['product/nhacungcap']" aria-expanded="false"  *ngIf="user.role == 'Admin'"><i class="me-3 fa fa-table"
+                                      aria-hidden="true"></i><span class="hide-menu">Nhà cung cấp</span></a>
+                                      <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                        [routerLink]="['product/kho']" aria-expanded="false"  *ngIf="user.role == 'Admin'"><i class="me-3 fa fa-table"
+                                            aria-hidden="true"></i><span class="hide-menu">Kho hàng</span></a>
+              <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                [routerLink]="['user/manage-user']" aria-expanded="false" *ngIf="user.role == 'Admin'"><i class="me-3 fa fa-user"
+                          aria-hidden="true"></i><span class="hide-menu">Quản lý tài khoản</span></a></li>
+ <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="icon-fontawesome.html" aria-expanded="false" (click)="Logout()"><i class="me-3 fa fa-font"
+                          aria-hidden="true" ></i><span class="hide-menu" >Đăng Xuất</span></a></li>
+          </ul>
+
+      </nav>
+      <!-- End Sidebar navigation -->
+  </div>
+  <!-- End Sidebar scroll-->
+</aside>

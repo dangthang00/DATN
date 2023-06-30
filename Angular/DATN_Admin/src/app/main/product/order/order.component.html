@@ -1,0 +1,30 @@
+
+        <table class="table datatable-basic">
+            <thead>
+                <tr>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Họ tên khách hàng</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let it of list_item">
+                    <td>{{it.maSp}}</td>
+                    <td>{{it.tenSp}}</td>
+                    <td>{{it.tenKhachHang}}</td>
+                    <td class="text-center">
+                        <ul class="icons-list">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="icon-menu9"></i>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </td>
+
+
+                </tr>
+            </tbody>
+        </table>

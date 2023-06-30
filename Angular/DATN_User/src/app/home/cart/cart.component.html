@@ -1,0 +1,108 @@
+<section class="breadcrumb-section set-bg" data-setbg="../../../assets/img/breadcrumb.jpg">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <div class="breadcrumb__text">
+                  <h2>Giỏ hàng</h2>
+                  <div class="breadcrumb__option">
+                      <a href="./index.html">Trang Chủ</a>
+                      <span>Giỏ hàng</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- Shoping Cart Section Begin -->
+<section class="shoping-cart spad">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="shoping__cart__table">
+                  <table >
+                      <thead>
+                          <tr >
+                              <th class="shoping__product">Sản phẩm</th>
+                              <th>Ảnh</th>
+                              <th>Giá</th>
+                              <th>Số lượng</th>
+                              <th>Tổng</th>
+                              <th  class="shoping__cart__item__close" style="color: brown;font-size: 35px;">
+                                <span (click)="XoaCart()"  ><i class="fa fa-trash"></i></span>
+                            </th>
+                          </tr>
+                      </thead>
+                      <tbody *ngFor="let x of list">
+                          <tr>
+                              <td class="shoping__cart__item" >
+
+                                  <h5>{{x.tenSP}}</h5>
+                              </td>
+                              <td>
+                                <img src="{{x.anh}}" alt="">
+                              </td>
+
+
+
+                              <td class="shoping__cart__price">
+                                  {{x.giaBan + x.donViTinh}}
+                              </td>
+                              <td class="shoping__cart__quantity">
+                                  <div class="quantity">
+                                      <div class="pro-qty">
+                                        <button (click)="Giam(x.maSP)" style="border: 1px solid #dbdbdb;padding: 4px 8px;">-</button>
+                                          <input type="text" value="{{x.quantity}}">
+                                        <button (click) ="Tang(x.maSP)" style="border: 1px solid #dbdbdb;padding: 4px 8px;">+</button>
+                                      </div>
+
+                                  </div>
+                              </td>
+                              <td class="shoping__cart__total">
+                                {{x.giaBan * x.quantity | currency : 'VND'}}
+                              </td>
+
+                          </tr>
+
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="shoping__cart__btns">
+                  <a href="/index" class="primary-btn cart-btn">Tiếp tục mua sắm</a>
+                  <a class="primary-btn cart-btn cart-btn-right" (click)="updateCart()">Cập nhật giỏ hàng<span class="icon_loading"></span>
+                     </a>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="shoping__continue">
+                  <div class="shoping__discount">
+                      <h5>Mã code</h5>
+                      <form action="#">
+                          <input type="text" placeholder="Nhập mã code của bạn">
+                          <button type="submit" class="site-btn">Dùng mã</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="shoping__checkout">
+                  <h5>Tổng giỏ hàng của bạn</h5>
+                  <ul >
+
+
+                      <li >Tên sản phẩm: <span *ngFor="let x of list">{{x.tenSP}}</span>
+
+                      <li>Tổng tiền<span>{{tTong | currency : 'VND'}}VND</span></li>
+                  </ul>
+                  <a [routerLink]="['/checkout']" class="primary-btn">Thanh toán giỏ hàng</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Shoping Cart Section End -->

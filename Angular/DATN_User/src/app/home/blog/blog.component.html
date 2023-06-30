@@ -1,0 +1,194 @@
+<section class="breadcrumb-section set-bg" data-setbg="../../../assets/img/breadcrumb.jpg">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <div class="breadcrumb__text">
+                  <h2>Tin Tức</h2>
+                  <div class="breadcrumb__option">
+                      <a href="./index.html">Trang Chủ</a>
+                      <span>Tin Tức</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- Blog Section Begin -->
+<section class="blog spad">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-4 col-md-5">
+              <div class="blog__sidebar">
+                  <div class="blog__sidebar__search">
+                      <form action="#">
+                          <input type="text" placeholder="Search...">
+                          <button type="submit"><span class="icon_search"></span></button>
+                      </form>
+                  </div>
+                  <div class="blog__sidebar__item">
+                      <h4>Thể loại</h4>
+                      <ul>
+                          <li><a href="#">Tất cả</a></li>
+                          <li><a href="#">Đẹp (20)</a></li>
+
+                          <li><a href="#">Thời trang (9)</a></li>
+
+                      </ul>
+                  </div>
+                  <div class="blog__sidebar__item">
+                      <h4>Tin tức mới</h4>
+                      <div class="blog__sidebar__recent">
+                          <a href="#" class="blog__sidebar__recent__item">
+                              <div class="blog__sidebar__recent__item__pic">
+                                  <img src="../../../assets/img/blog/sidebar/sr-1.jpg" alt="">
+                              </div>
+                              <div class="blog__sidebar__recent__item__text">
+                                  <h6>Đồ decor trong nhà không nhiều nhưng món nào cũng chất<br />  và thể hiện gu thẩm mỹ của chủ nhân</h6>
+                                  <span>MAR 05, 2019</span>
+                              </div>
+                          </a>
+                          <a href="#" class="blog__sidebar__recent__item">
+                              <div class="blog__sidebar__recent__item__pic">
+                                  <img src="../../../assets/img/blog/sidebar/sr-2.jpg" alt="">
+                              </div>
+                              <div class="blog__sidebar__recent__item__text">
+                                  <h6>Phòng khách căn hộ nhìn <br /> thẳng ra khu rừng xanh</h6>
+                                  <span>MAR 05, 2019</span>
+                              </div>
+                          </a>
+                          <a href="#" class="blog__sidebar__recent__item">
+                              <div class="blog__sidebar__recent__item__pic">
+                                  <img src="../../../assets/img/blog/sidebar/sr-3.jpg" alt="">
+                              </div>
+                              <div class="blog__sidebar__recent__item__text">
+                                  <h6>Dễ dàng biến không gian  <br />sống gia đình đẹp</h6>
+                                  <span>MAR 05, 2019</span>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+                  <div class="blog__sidebar__item">
+                      <h4>Tìm kiếm</h4>
+                      <div class="blog__sidebar__item__tags">
+
+                          <a href="#">Đẹp</a>
+                          <a href="#">Nhà</a>
+
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-8 col-md-7">
+              <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                      <div class="blog__item" *ngFor="let tt of Dstintuc">
+                          <div class="blog__item__pic">
+                              <img src="{{tt.anhTt}}" alt="">
+                          </div>
+                          <div class="blog__item__text">
+                              <ul>
+                                  <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                  <li><i class="fa fa-comment-o"></i> 5</li>
+                              </ul>
+                              <h5><a href="#">{{tt.tieude}}</a></h5>
+                              <p>{{tt.noidung}} </p>
+                              <a href="#" class="blog__btn">Xem thêm <span class="arrow_right"></span></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                      <div class="blog__item" *ngFor="let tt of Dstintuc1">
+                          <div class="blog__item__pic">
+                              <img src="{{tt.anhTt}}" alt="">
+                          </div>
+                          <div class="blog__item__text">
+                              <ul>
+                                  <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                  <li><i class="fa fa-comment-o"></i> 5</li>
+                              </ul>
+                              <h5><a href="#">{{tt.tieude}}</a></h5>
+                              <p>{{tt.noidung}} </p>
+                              <a href="#" class="blog__btn">Xem thêm  <span class="arrow_right"></span></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                      <div class="blog__item" *ngFor="let tt of Dstintuc2">
+                          <div class="blog__item__pic">
+                              <img src="{{tt.anhTt}}" alt="">
+                          </div>
+                          <div class="blog__item__text">
+                              <ul>
+                                  <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                  <li><i class="fa fa-comment-o"></i> 5</li>
+                              </ul>
+                              <h5><a href="#">{{tt.tieude}}</a></h5>
+                              <p>{{tt.noidung}} </p>
+                              <a href="#" class="blog__btn">Xem thêm  <span class="arrow_right"></span></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                      <div class="blog__item" *ngFor="let tt of Dstintuc3">
+                          <div class="blog__item__pic">
+                              <img src="{{tt.anhTt}}" alt="">
+                          </div>
+                          <div class="blog__item__text">
+                              <ul>
+                                  <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                  <li><i class="fa fa-comment-o"></i> 5</li>
+                              </ul>
+                              <h5><a href="#">{{tt.tieude}}</a></h5>
+                              <p>{{tt.noidung}} </p>
+                              <a href="#" class="blog__btn">Xem thêm  <span class="arrow_right"></span></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                      <div class="blog__item" *ngFor="let tt of Dstintuc4">
+                          <div class="blog__item__pic">
+                              <img src="{{tt.anhTt}}" alt="">
+                          </div>
+                          <div class="blog__item__text">
+                              <ul>
+                                  <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                  <li><i class="fa fa-comment-o"></i> 5</li>
+                              </ul>
+                              <h5><a href="#">{{tt.tieude}}</a></h5>
+                              <p>{{tt.noidung}} </p>
+                              <a href="#" class="blog__btn">Xem thêm  <span class="arrow_right"></span></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                      <div class="blog__item" *ngFor="let tt of Dstintuc5">
+                          <div class="blog__item__pic">
+                              <img src="{{tt.anhTt}}" alt="">
+                          </div>
+                          <div class="blog__item__text">
+                              <ul>
+                                  <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                  <li><i class="fa fa-comment-o"></i> 5</li>
+                              </ul>
+                              <h5><a href="#">{{tt.tieude}}</a></h5>
+                              <p>{{tt.noidung}} </p>
+                              <a href="#" class="blog__btn">Xem thêm  <span class="arrow_right"></span></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-12">
+                      <div class="product__pagination blog__pagination">
+                          <a href="#">1</a>
+                          <a href="#">2</a>
+                          <a href="#">3</a>
+                          <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

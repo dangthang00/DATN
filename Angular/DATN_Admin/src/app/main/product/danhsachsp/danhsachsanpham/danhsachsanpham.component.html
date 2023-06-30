@@ -1,0 +1,262 @@
+<!-- <div class="container-fluid">
+ ============================================================== -->
+  <!-- Sales chart -->
+  <!-- ============================================================== -->
+  <div class="page-breadcrumb">
+    <div class="row align-items-center">
+        <div class="col-md-6 col-8 align-self-center">
+            <h3 class="page-title mb-0 p-0">Danh sách sản phẩm</h3>
+            <div class="d-flex align-items-center">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><button style="background-color: beige;border: 1px solid rgb(202, 180, 180);"> Trang chủ</button> </a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Danh sách sản phẩm</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="col-md-6 col-4 align-self-center">
+            <div class="text-end upgrade-btn">
+
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+      <!-- Column -->
+
+      <!-- Column -->
+      <!-- Column -->
+
+      <!-- Column -->
+  </div>
+  <!-- ============================================================== -->
+  <!-- Sales chart -->
+  <!-- ============================================================== -->
+
+  <!-- ============================================================== -->
+  <!-- Table -->
+  <!-- ============================================================== -->
+  <div class="row">
+      <div class="col-sm-12">
+          <div class="card">
+              <div class="card-body">
+                  <div class="d-md-flex">
+                      <h4 class="card-title col-md-10 mb-md-0 mb-3 align-self-center">Quản lí sản phẩm</h4>
+                      <div class="col-md-2 ms-auto">
+                        <div class="col-lg-3">
+
+                        </div>
+                      </div>
+                  </div>
+                  <div class="heading-elements">
+                    <div class="heading-btn-group">
+                      <a (click)="createModal()" class="btn btn-link btn-float has-text"><i
+                          class="icon-plus22 text-primary"></i><span><button style="background-color: rgb(3, 135, 135);color: rgb(255, 255, 255);height: 50px;">Thêm sản phẩm</button></span></a>
+                    </div>
+                  </div>
+                  <select name="" id="" (change)="sizeChange($any($event))" style="margin-left: 80%;">
+                    <option *ngFor="let item of table_numberSize"  value="{{item}}">{{item}}</option>
+
+                  </select>
+                          <div class="panel-body">
+
+                            <div class="form-group">
+
+                              <label class="col-lg-2 control-label" style="text-align:right ;">Tên sản phẩm:</label>
+                              <div class="col-lg-8">
+                                <input formControlName="txt_tensp" type="text" class="form-control" placeholder="Tên sản phẩm">
+                              </div>
+                            </div>
+
+                            <div class="col-lg-12" style="margin-left: 66%;margin-top: -54px;">
+                              <div class="col-lg-10 text-left" [formGroup]="frmSearch" class="form-horizontal" (ngSubmit)="LoadData()" >
+                                <button type="submit" class="btn btn-primary"><i class="icon-search4 position-right"></i> Tìm kiếm</button>
+                              </div>
+                              </div>
+                          </div>
+                        </div>
+                  <div class="row">
+                    <div class=" .col-">
+                      <table class="col-lg-12">
+                          <thead >
+                            <tr  style="border: 1px solid rgb(0, 0, 0);background-color: black;color: bisque">
+                              <th  style="border: 1px solid rgb(255, 255, 255);" width="10px;">STT</th>
+                              <th style="border: 1px solid rgb(255, 255, 255);">Mã sản phẩm</th>
+                              <th style="border: 1px solid rgb(255, 255, 255);">Loại</th>
+                              <th style="border: 1px solid rgb(255, 255, 255);">Tên sản phẩm</th>
+                              <th style="border: 1px solid rgb(255, 255, 255);">Ảnh</th>
+                              <th style="border: 1px solid rgb(255, 255, 255);">Số lượng</th>
+                              <th style="border: 1px solid rgb(255, 255, 255);">Đơn giá</th>
+                              <th style="border: 1px solid rgb(255, 255, 255);">Nhà sản xuất</th>
+                              <th style="border: 1px solid rgb(255, 255, 255);" class="col-lg-4">Mô tả</th>
+                              <th style="border: 1px solid rgb(255, 255, 255);">Ngày tạo</th>
+                              <th style="border: 1px solid rgb(255, 255, 255);" class="text-center">Hành động</th>
+                            </tr>
+                          </thead>
+                          <tr style="border: 1px solid rgb(0, 0, 0);" *ngFor="let i = index let lp of list_product  | paginate :{itemsPerPage: tablesize,
+                            currentPage: page,
+                            totalItems: count
+
+                          }">
+                              <td style="border: 1px solid rgb(0, 0, 0);text-align: center;">{{ pageSize * (pageIndex - 1) + (i + 1)}}</td>
+                              <td style="border: 1px solid rgb(0, 0, 0);text-align: center;">{{lp.maSp}}</td>
+                              <td style="border: 1px solid rgb(0, 0, 0);text-align: center;">{{lp.tenLoai}}</td>
+                              <td style="border: 1px solid rgb(0, 0, 0);">{{lp.tenSp}}</td>
+                              <td style="border: 1px solid rgb(0, 0, 0);"><img src="{{lp.anh}}" height="100%;" width="100px" alt=""></td>
+                              <td style="border: 1px solid rgb(0, 0, 0);">{{lp.soLuong}}</td>
+                              <td style="border: 1px solid rgb(0, 0, 0);">{{lp.giaBan | currency: 'VND'}}</td>
+                              <td style="border: 1px solid rgb(0, 0, 0);text-align: center;"> {{lp.tenNhaCungCap}}</td>
+                              <td style="border: 1px solid rgb(0, 0, 0);">{{lp.mota }} </td>
+                              <td style="border: 1px solid rgb(0, 0, 0);">{{lp.ngayTao }} </td>
+                              <td class="text-center">
+                                <ul class="icons-list" aria-expanded="false" style="list-style: none;">
+                                  <li><a (click)="openUpdateModal(lp.maSp)"><i class="icon-wrench"  style="background-color: rgb(160, 165, 0);border: 1px solid black;"></i></a></li>
+                                  <li><a (click)="onRemove(lp.maSp)"><i class="icon-trash"  style="background-color: rgb(255, 0, 0);border: 1px solid black;"></i></a></li>
+                                </ul>
+                              </td>
+                            </tr>
+
+
+
+                      </table>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <tfoot>
+        <tr >
+            <div style="width:300px;text-align: right;">
+              <pagination-controls
+              previousLabel="Quay lại"
+              nextLabel="Tiếp"
+              (pageChange)="dataChange($event)"></pagination-controls>
+            </div>
+        </tr>
+      </tfoot>
+
+  <!-- ============================================================== -->
+  <!-- Table -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Recent blogss -->
+  <!-- ============================================================== -->
+
+  <!-- ============================================================== -->
+  <!-- Recent blogss -->
+  <!-- ============================================================== -->
+
+  <div *ngIf="showUpdateModal" class="modal fade" id="createModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h5 class="modal-title">Thêm thông tin sản phẩm</h5>
+        </div>
+        <hr>
+        <form *ngIf="doneSetupForm" [formGroup]="frmProduct" (ngSubmit)="OnSubmit(frmProduct.value)"
+          class="form-horizontal">
+          <div class="modal-body" style="padding-left: 50px !important; padding-right:50px !important;">
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Loại<span style="color:red ;">*</span>:</label>
+              <div class="col-lg-9">
+                <select formControlName="txt_maloai" class="form-control">
+                  <option value="" disabled selected>Chọn một loại</option>
+                  <option *ngFor="let lc of list_category" value="{{lc.maLoai}}">{{lc.tenLoai}}</option>
+                </select>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Tên sản phẩm<span style="color:red ;">*</span>:</label>
+              <div class="col-lg-9">
+                <input formControlName="txt_tenSp" type="text" class="form-control" placeholder="Tên sản phẩm">
+
+					  </div>
+          </div>
+          <div class="form-group">
+						<label class="col-lg-3 control-label">Mô tả:</label>
+						<div class="col-lg-9">
+							<input formControlName="txt_mota" type="text" class="form-control" placeholder="Mô tả">
+
+					  </div>
+          </div>
+          <div class="form-group">
+						<label class="col-lg-3 control-label">Ảnh</label>
+						<div class="col-lg-9">
+							<input formControlName="txt_Anh" type="text" class="form-control" placeholder="Ảnh">
+
+					  </div>
+          </div>
+          <div class="form-group">
+						<label class="col-lg-3 control-label">Số lượng</label>
+						<div class="col-lg-9">
+							<input formControlName="txt_soluong" type="text" class="form-control" placeholder="Số lượng">
+
+					  </div>
+          </div>
+          <div class="form-group">
+						<label class="col-lg-3 control-label">Ngay Tao</label>
+						<div class="col-lg-9">
+							<input formControlName="txt_ngaytao" type="date" class="form-control" placeholder="Ngay tao">
+
+					  </div>
+          </div>
+          <!-- <div class="form-group">
+						<label class="col-lg-3 control-label">Ảnh:</label>
+						<div class="col-lg-9">
+							<div class="media no-margin-top">
+								<div class="media-left">
+									<img  src="{{imagePreview}}" style="width: 58px; height: 58px;" class="img-rounded" alt="">
+								</div>
+								<div class="media-body">
+									<input formControlName="txt_Anh" accept=".jpg,.png,.jpeg,.gif,.bmp,.tif,.tiff"
+										type="file" class="file-styled" >
+									<span class="help-block">Định dạng được chấp nhận: gif, png, jpg. Kích thước tệp tối đa 2Mb</span>
+								</div>
+							</div>
+						</div>
+					</div> -->
+
+          <div class="form-group">
+						<label class="col-lg-3 control-label">Nhà sản xuất<span style="color:red ;">*</span>:</label>
+						<div class="col-lg-9">
+							<select formControlName="txt_maNhaCungCap" class="form-control"  place-holder="a">
+                <option value="" disabled selected>Chọn một nhà sản xuất</option>
+                <option *ngFor="let lpcer of list_producer" value="{{lpcer.maNhaCungCap}}">{{lpcer.tenNhaCungCap}}</option>
+              </select>
+
+						</div>
+					</div>
+          <div class="form-group">
+						<label class="col-lg-3 control-label">Đơn giá<span style="color:red ;">*</span>:</label>
+						<div class="col-lg-9">
+							<input formControlName="txt_giaBan" type="number" class="form-control" placeholder="Đơn giá">
+
+						</div>
+					</div>
+
+          <div class="form-group">
+
+						</div>
+					</div>
+
+				<hr>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" (click)="closeModal()">Đóng</button>
+					<button type="submit" class="btn btn-primary" [disabled]="frmProduct.invalid">Lưu lại</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- /large modal -->
+
+
+<!-- <div class="container-fluid">
+ ============================================================== -->
+  <!-- Sales chart -->
+  <!-- ============================================================== -->
+

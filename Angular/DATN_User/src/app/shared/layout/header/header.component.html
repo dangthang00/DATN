@@ -1,0 +1,84 @@
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> dangthang20122001@gmail.com</li>
+                                <li>Miễn Phí Ship Cho Đơn Hàng 99k Đầu Tiên</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                            <div class="header__top__right__language">
+                                <img src="assets/img/language.png" alt="">
+                                <div>Tiếng Việt</div>
+                                <span class="arrow_carrot-down"></span>
+                                <ul>
+                                    <li><a href="#">Tiếng Pháp</a></li>
+                                    <li><a href="#">Tiếng Anh</a></li>
+                                </ul>
+                            </div>
+                            <div class="header__top__right__auth">
+                                <a [routerLink]="['/login']"><i class="fa fa-user"></i> Đăng Nhập</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="assets/img/logo01.jpg" style="width:70%; height: 40%;" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="/index.html">Trang Chủ</a></li>
+                            <li><a [routerLink]="['/shop']">Cửa Hàng</a>
+                              <ul class="header__menu__dropdown">
+
+                                <li><a [routerLink]="['/cart']">Giỏ Hàng</a></li>
+                                <li><a [routerLink]="['/checkout']">Thanh Toán</a></li>
+                            </ul>
+                            </li>
+                            <li><a href="#">Trang</a>
+                                <ul class="header__menu__dropdown">
+
+                                    <li><a [routerLink]="['/blog']">Tin Tức</a></li>
+                                    <li><a [routerLink]="['/contact']">Liên Hệ</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a [routerLink]="['/about']">Về Chúng Tôi</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                            <li><a [routerLink]="['/cart']"><i class="fa fa-shopping-bag"></i> <span></span></a></li>
+                        </ul>
+                        <div class="header__cart__price">Ví: <span>0VND</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->

@@ -1,0 +1,48 @@
+
+<section class="login_box_area section_gap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="login_box_img">
+          <img class="img-fluid" src="../../assets/images/login.jpg" alt="">
+          <div class="hover">
+            <h4>Mới vào trang web của chúng tôi?</h4>
+            <p></p>
+            <a class="primary-btn" href="registration.html">Tạo tài khoản mới</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="login_form_inner">
+          <h3>Đăng nhập </h3>
+          <form class="row login_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate" [formGroup]="frmLogin" (ngSubmit)="Login(frmLogin.value)">
+            <div *ngIf="taikhoan.invalid && (taikhoan.dirty || taikhoan.touched)">
+              <span style="color:red ;" *ngIf="taikhoan.errors?.['required']">Tài khoản không được để trống</span>
+          </div>
+            <div class="col-md-12 form-group">
+
+              <input type="text" formControlName="txt_taikhoan"  class="form-control" id="name" name="name" placeholder="Tên tài khoản" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" ngModel>
+            </div>
+            <div *ngIf="matkhau.invalid && (matkhau.dirty || matkhau.touched)">
+              <span style="color:red ;" *ngIf="matkhau.errors?.['required']">Mật khẩu không được để trống</span>
+          </div>
+            <div class="col-md-12 form-group">
+              <input type="text" formControlName="txt_matkhau"  class="form-control" id="name" name="name" placeholder="Mật khẩu" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" ngModel>
+            </div>
+            <div class="col-md-12 form-group">
+              <div class="creat_account">
+                <input type="checkbox" id="f-option2" name="selector">
+                <label for="f-option2">Nhớ mật khẩu</label>
+              </div>
+            </div>
+            <div class="col-md-12 form-group">
+              <button type="submit"  [disabled]="frmLogin.invalid" value="submit" class="primary-btn">Đăng nhập</button>
+              <a href="#">Bạn quên mật khẩu?</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
